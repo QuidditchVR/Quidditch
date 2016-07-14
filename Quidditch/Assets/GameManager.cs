@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] hoops;
     public int cHoop = 0;
     public static GameManager instance;
-
+    public Text text;
 
     // Use this for initialization
     void Start()
@@ -25,27 +26,19 @@ public class GameManager : MonoBehaviour
 
     public void nextHoop()
     {
-        
-        if (cHoop == 10)
+        hoops[cHoop].SetActive(false);
+        ++cHoop;
+        if (cHoop == 11)
         {
-            //GetComponent<ParticleSystem>().Play();
+            //fireworks
+            GetComponent<ParticleSystem>().Play();
             Debug.Log("Done");
+            hoops[cHoop].SetActive(false);
         }
-
         else
         {
-
-            Debug.Log("NextHoop");
-            //hoops[cHoop].GetComponent<Renderer>().enabled = false;
-            hoops[cHoop].SetActive(false);
-
-            ++cHoop;
-            //hoops[cHoop].GetComponent<Renderer>().material.color = Color.green;
-            //hoops[cHoop].GetComponent<Renderer>().enabled = true;
             hoops[cHoop].SetActive(true);
-
         }
-
-        //hoops[cHoop].mater
+        text.text = cHoop + "/12";
     }
 }
