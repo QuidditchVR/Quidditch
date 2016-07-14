@@ -45,11 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BallController.cs" />
+     <Compile Include="Assets\BroomHoops.cs" />
      <Compile Include="Assets\Components\Firebolt.cs" />
      <Compile Include="Assets\Components\FlyController.cs" />
      <Compile Include="Assets\Components\SpawnFirebolt.cs" />
      <Compile Include="Assets\DayAndNight.cs" />
      <Compile Include="Assets\Game.cs" />
+     <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\Quantum Theory\Polyworld\Scripts\QT_InteractContainer.cs" />
      <Compile Include="Assets\Quantum Theory\Polyworld\Scripts\QT_LightFlicker.cs" />
      <Compile Include="Assets\Quantum Theory\Polyworld\Scripts\QT_ModifyColor.cs" />
@@ -91,6 +94,7 @@
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_UpdatePoses.cs" />
      <Compile Include="Assets\SteamVR\Scripts\SteamVR_Utils.cs" />
      <Compile Include="Assets\Test.cs" />
+     <Compile Include="Assets\ThrowBall.cs" />
      <None Include="Assets\Quantum Theory\Polyworld\Ancient East\Color Palettes\Architecture\Palette_NemesisRoof.txt" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsReflectiveUnity5_Linear.shader" />

@@ -23,7 +23,10 @@ public class FlyController : MonoBehaviour
 
     void Start() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-        device = SteamVR_Controller.Input((int)SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.FarthestRight));
+        //get device index
+
+        device = SteamVR_Controller.Input((int)trackedObj.index);
+        //(int)SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.FarthestRight)
     }
 
     void Update() {
