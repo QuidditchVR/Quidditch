@@ -17,11 +17,10 @@ public class FlyController : MonoBehaviour
         get { return _hasStarted; }
     }
     private bool _hasStarted;
-    public ulong fowardButtton = SteamVR_Controller.ButtonMask.Axis1;
-    public ulong boostButton = SteamVR_Controller.ButtonMask.Grip;
+    private ulong fowardButtton = SteamVR_Controller.ButtonMask.Axis1;
+    private ulong boostButton = SteamVR_Controller.ButtonMask.Grip;
 
     void Start() {
-        // var a = GetComponent<SteamVR_TrackedController>();
         trackedObj = GetComponent<SteamVR_TrackedObject>();
         device = SteamVR_Controller.Input((int)this.trackedObj.index);
     }
