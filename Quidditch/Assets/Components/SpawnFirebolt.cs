@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpawnFirebolt : MonoBehaviour
 {
+    public GameObject player;
     public GameObject fireboltPrefab;
     public Transform spawnFireboltPoint;
     private float startFireboltSize = 0.3f;
@@ -59,6 +60,7 @@ public class SpawnFirebolt : MonoBehaviour
         firebolt.transform.parent = null;
         firebolt.transform.localScale = scale;
         firebolt.GetComponent<Rigidbody>().isKinematic = false;
+        firebolt.GetComponent<Rigidbody>().velocity = player.GetComponent<Rigidbody>().velocity;
         firebolt.GetComponent<Rigidbody>().AddForce(transform.forward * fireboltSpeed * scale.x);
         firebolt = null;
     }

@@ -7,7 +7,8 @@ public class FlyController : MonoBehaviour
     private SteamVR_Controller.Device device;
     public GameObject cam;
     public Rigidbody camRigid;
-    public float upSpeed = 10.0f;
+    private float maxUpSpeed = 30.0f;
+    private float minUpSpeed = 5.0f;
     public float forwardSpeed = 20.0f;
     public float boostMultiply = 2.0f;
     public ParticleSystem windEffect;
@@ -34,10 +35,8 @@ public class FlyController : MonoBehaviour
         }
 
         Vector3 upVelocity = Vector3.zero;
-        if (transform.forward.y > 0.1) {
-            upVelocity = Vector3.up * upSpeed;
-        } else if (transform.forward.y < -0.1) {
-            upVelocity = Vector3.down * upSpeed;
+        if (Mathf.Abs(transform.forward.y) > 0.1) {
+            upVelocity = Vector3.up * (transform.forward.y * (maxUpSpeed - minUpSpeed) + minUpSpeed);
         }
 
         Vector3 forwardVelocity = Vector3.zero;
