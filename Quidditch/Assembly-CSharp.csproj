@@ -47,43 +47,11 @@
   <ItemGroup>
      <Compile Include="Assets\BallController.cs" />
      <Compile Include="Assets\BroomHoops.cs" />
+     <Compile Include="Assets\Components\Enemy.cs" />
      <Compile Include="Assets\Components\Firebolt.cs" />
      <Compile Include="Assets\Components\FlyController.cs" />
+     <Compile Include="Assets\Components\Icebolt.cs" />
      <Compile Include="Assets\Components\SpawnFirebolt.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_AnimateCurvedFillOnStart.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_CameraController.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_CameraRotationOnButtonHeld.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_ChangeValueOnHold.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_GunController.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_GunMovement.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_MoveAlong.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_MoveHeartbeat.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_OrientOnCurvedSpace.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_PerlinNoisePosition.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_PerlinNoiseRotation.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_RaycastToCanvas.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_RiseChildrenOverTime.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_ShowParentCoordinates.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_TMPChecker.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_ViveButtonState.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_ViveHapticPulse.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_ViveLaserBeam.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_WorldSpaceCursorFollow.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_WorldSpaceMouseMultipleCanvases.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_ZChangeOnHover.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_draggable.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_guntarget.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_inventory_paralax.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_rotation_anim.cs" />
-     <Compile Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\CUI_touchpad.cs" />
-     <Compile Include="Assets\CurvedUI\Scripts\CurvedUIInputFieldCaret.cs" />
-     <Compile Include="Assets\CurvedUI\Scripts\CurvedUIPointerEventData.cs" />
-     <Compile Include="Assets\CurvedUI\Scripts\CurvedUIRaycaster.cs" />
-     <Compile Include="Assets\CurvedUI\Scripts\CurvedUISettings.cs" />
-     <Compile Include="Assets\CurvedUI\Scripts\CurvedUIVertexEffect.cs" />
-     <Compile Include="Assets\CurvedUI\Scripts\CurvedUIViveController.cs" />
-     <Compile Include="Assets\CurvedUI\Scripts\CurvedUIViveInputModule.cs" />
-     <Compile Include="Assets\CurvedUI\Scripts\Experimental\CurvedUITMP.cs" />
      <Compile Include="Assets\DayAndNight.cs" />
      <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\GameManager.cs" />
@@ -132,7 +100,6 @@
      <Compile Include="Assets\Tutorial_Two.cs" />
      <None Include="Assets\Quantum Theory\Polyworld\Ancient East\Color Palettes\Architecture\Palette_NemesisRoof.txt" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Fade.shader" />
-     <None Include="Assets\CurvedUI\Demo Scenes\Demo Scenes Content\OverlayBlend.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsReflectiveUnity5_Linear.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_BlitFlip.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\VertexLitVertexColors.shader" />
@@ -144,6 +111,7 @@
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsDiffuseTexUnity5_Linear.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Overlay.shader" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsDiffuseTexUnity5.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsAlphaUnity5.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Ancient East\Color Palettes\Architecture\Palette_Nemesis.txt" />
@@ -154,6 +122,7 @@
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Quantum Theory\Polyworld\Ancient East\Color Palettes\Architecture\Palette_LighterWood.txt" />
      <None Include="Assets\PyroParticles\Readme.txt" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsEmissiveUnity5.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Ancient East\Color Palettes\Architecture\Palette_LighterWoodRoof.txt" />
      <None Include="Assets\Quantum Theory\Polyworld\Ancient East\Color Palettes\Architecture\Palette_DefaultBrown.txt" />
@@ -161,7 +130,6 @@
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsReflectiveUnity5.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_Blit.shader" />
-     <None Include="Assets\CurvedUI\Shaders and Materials\UIAlwaysOnTop.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_SphericalProjection.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_AlphaOut.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsEmissiveUnity5_Linear.shader" />
@@ -172,6 +140,7 @@
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\SteamVR\Resources\SteamVR_ColorOut.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\QT_Cubemaps.cginc" />
+     <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Quantum Theory\Polyworld\Shaders\VertexColors\IBL\VertexColorsUnity5_Linear.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

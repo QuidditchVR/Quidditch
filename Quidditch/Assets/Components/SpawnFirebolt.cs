@@ -6,10 +6,11 @@ public class SpawnFirebolt : MonoBehaviour
     public GameObject player;
     public GameObject fireboltPrefab;
     public Transform spawnFireboltPoint;
-    private float startFireboltSize = 0.3f;
-    private float maxFireboltSize = 3.0f;
-    private float fireboltScaleupSpeed = 1.0f;
-    private float fireboltSpeed = 200.0f;
+    public float startFireboltSize = 0.3f;
+    public float maxFireboltSize = 3.0f;
+    public float fireboltScaleupSpeed = 1.0f;
+    public float fireboltSpeed = 200.0f;
+    public float fireboltDestroyTime = 5.0f;
 
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device device;
@@ -63,5 +64,6 @@ public class SpawnFirebolt : MonoBehaviour
         firebolt.GetComponent<Rigidbody>().velocity = player.GetComponent<Rigidbody>().velocity;
         firebolt.GetComponent<Rigidbody>().AddForce(transform.forward * fireboltSpeed * scale.x);
         firebolt = null;
+        firebolt.GetComponent<Firebolt>().setDestroyTime(fireboltDestroyTime);
     }
 }
