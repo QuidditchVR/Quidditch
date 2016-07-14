@@ -49,7 +49,8 @@ public class FlyController : MonoBehaviour
         if (device != null && device.GetPress(boostButton)) {
             forwardVelocity *= boostMultiply;
             windEffect.Play();
-        } else {
+        }
+        if (forwardVelocity == Vector3.zero) {
             windEffect.Stop();
         }
 
