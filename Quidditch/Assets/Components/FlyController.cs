@@ -13,6 +13,7 @@ public class FlyController : MonoBehaviour
     public float boostMultiply = 2.0f;
     public ParticleSystem windEffect;
     public AudioSource windAudio;
+
     public AudioClip normalWind;
     public AudioClip crazyWind;
 
@@ -24,16 +25,16 @@ public class FlyController : MonoBehaviour
     private bool _hasStarted;
     private ulong fowardButtton = SteamVR_Controller.ButtonMask.Axis1;
     private ulong boostButton = SteamVR_Controller.ButtonMask.Grip;
-
+    private bool hasChanged = false;
     void Start() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-
+        windAudio.Play();
         //(int)SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.FarthestRight)
     }
 
     void Update() {
         device = SteamVR_Controller.Input((int)trackedObj.index);
-        windAudio.Play();
+        
         if (_hasStarted == false && device != null && device.GetPress(fowardButtton)) {
             _hasStarted = true;
         }
@@ -53,17 +54,22 @@ public class FlyController : MonoBehaviour
             //forwardVelocity.y = 0;
             forwardVelocity.Normalize();
             forwardVelocity *= forwardSpeed;
-            windAudio.Stop();
-            windAudio.clip = normalWind;
-            windAudio.Play();
+            /*if (windAudio.clip != normalWind)
+            { 
+                windAudio.Stop();
+                windAudio.clip = normalWind;
+                windAudio.Play();
+            }*/
             pulsePower = 200;
         }
 		if (device != null && device.GetPress (boostButton) && device.GetPress (fowardButtton)) {
 			forwardVelocity *= boostMultiply;
-			windEffect.Play ();
-            windAudio.Stop();
-            windAudio.clip = crazyWind;
-            windAudio.Play();
+            /*if (windAudio.clip != normalWind)
+            {
+                windAudio.Stop();
+                windAudio.clip = normalWind;
+                windAudio.Play();
+            }*/
             //windAudio.PlayOneShot(crazyWind);
             pulsePower = 700;
 		} else {
@@ -78,6 +84,12 @@ public class FlyController : MonoBehaviour
         if (camRigid.velocity != Vector3.zero) {
             windEffect.transform.position = cam.transform.position + camRigid.velocity.normalized * 3 + Vector3.up * head.localPosition.y;
             windEffect.transform.forward = -camRigid.velocity.normalized;
+        }
+
+        if(forwardVelocity == Vector3.zero)
+        {
+            Vector3 up = Vector3.up * 2 * Time.deltaTime;
+            transform.position += up; 
         }
     }
 
