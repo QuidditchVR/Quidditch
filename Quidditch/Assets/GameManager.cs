@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     {
         hoops[cHoop].SetActive(false);
         ++cHoop;
-        if (cHoop == 11)
+        if (cHoop == 10)
         {
             //fireworks
             GetComponent<ParticleSystem>().Play();
@@ -39,6 +39,6 @@ public class GameManager : MonoBehaviour
         {
             hoops[cHoop].SetActive(true);
         }
-        text.text = cHoop + "/12";
+        text.text = cHoop + "/10";
     }
 }
