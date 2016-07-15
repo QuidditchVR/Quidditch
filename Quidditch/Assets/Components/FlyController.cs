@@ -53,12 +53,17 @@ public class FlyController : MonoBehaviour
             //forwardVelocity.y = 0;
             forwardVelocity.Normalize();
             forwardVelocity *= forwardSpeed;
-
+            windAudio.Stop();
+            windAudio.clip = normalWind;
+            windAudio.Play();
             pulsePower = 200;
         }
 		if (device != null && device.GetPress (boostButton) && device.GetPress (fowardButtton)) {
 			forwardVelocity *= boostMultiply;
 			windEffect.Play ();
+            windAudio.Stop();
+            windAudio.clip = crazyWind;
+            windAudio.Play();
             //windAudio.PlayOneShot(crazyWind);
             pulsePower = 700;
 		} else {
