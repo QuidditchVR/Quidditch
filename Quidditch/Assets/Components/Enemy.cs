@@ -14,10 +14,10 @@ public class Enemy : MonoBehaviour {
     private float iceboltSpeed = 30.0f;
     private float iceboltDestroyTime = 8.0f;
     private float iceboltDuration = 2.0f;
-    private float attackDistanceThreshold = 60.0f;
+    private float attackDistanceThreshold = 50.0f;
     private float escapeDistanceThreshold = 10.0f;
-    private float escapeSpeed = 40.0f;
-    private float escapeDistance = 100.0f;
+    private float escapeSpeed = 30.0f;
+    private float escapeDistance = 50.0f;
 
     private Vector3 startPos;
     private float rnd;
@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour {
 	void Update () {
         if (state == EnemyState.Idle) {
             nextAttackTime -= Time.deltaTime;
-            transform.position = startPos + Vector3.up * Mathf.Sin(Time.time + rnd) * 1;
+            transform.position = startPos + Vector3.up * Mathf.Sin(Time.time + rnd) * 3;
             transform.LookAt(playerHeadPosition.transform);
             //Vector3 f = transform.forward;
             //f.y = Mathf.Clamp(f.y, -0.3f, 0.3f);

@@ -18,6 +18,9 @@ public class Firebolt : MonoBehaviour {
 	}
 
     void OnTriggerEnter(Collider col) {
+        if (col.CompareTag("Player")) {
+            return;
+        }
         Destroy(gameObject);
         var explostion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(explostion, 10.0f);

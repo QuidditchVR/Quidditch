@@ -23,13 +23,12 @@ public class FlyController : MonoBehaviour
 
     void Start() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-        //get device index
 
-        device = SteamVR_Controller.Input((int)trackedObj.index);
         //(int)SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.FarthestRight)
     }
 
     void Update() {
+        device = SteamVR_Controller.Input((int)trackedObj.index);
         if (_hasStarted == false && device != null && device.GetPress(fowardButtton)) {
             _hasStarted = true;
         }
@@ -58,9 +57,10 @@ public class FlyController : MonoBehaviour
         }
 
         camRigid.velocity = forwardVelocity + upVelocity;
-        windEffect.transform.position = cam.transform.position + camRigid.velocity.normalized * 3 + Vector3.up * head.localPosition.y;
-        windEffect.transform.forward = -camRigid.velocity.normalized;
-
+        if (camRigid.velocity != Vector3.zero) {
+            windEffect.transform.position = cam.transform.position + camRigid.velocity.normalized * 3 + Vector3.up * head.localPosition.y;
+            windEffect.transform.forward = -camRigid.velocity.normalized;
+        }
     }
 
 }

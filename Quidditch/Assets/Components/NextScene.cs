@@ -10,6 +10,7 @@ public class NextScene : MonoBehaviour {
     public static int currentScene = 0;
  
     void OnTriggerEnter(Collider c) {
+        Debug.Log("HOGEHOGE");
         if (c.CompareTag("Player")) {
             currentScene++;
             if (currentScene >= sceneNames.Length) {
