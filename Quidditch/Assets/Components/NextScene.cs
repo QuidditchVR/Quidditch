@@ -4,20 +4,28 @@ using UnityEngine.SceneManagement;
 
 public class NextScene : MonoBehaviour {
 
-    public static string[] sceneNames = {
+    public string[] sceneNames = {
         "Level 1",
         "Level 2",
         "Level 3",
     };
-    public static int currentLevel = 1;
  
     void OnTriggerEnter(Collider c) {
         if (c.CompareTag("Player")) {
+            int currentLevel = 0;
+            foreach (var name in sceneNames) {
+                if (SceneManager.GetActiveScene().name == name) {
+                    break;
+                } else {
+                    currentLevel++;
+                }
+            }
+
             currentLevel++;
             if (currentLevel > sceneNames.Length) {
-                currentLevel = 1;
+                currentLevel = 0;
             }
-            SceneManager.LoadScene(sceneNames[currentLevel - 1]);
+            SceneManager.LoadScene(sceneNames[currentLevel]);
         }
     }
 }

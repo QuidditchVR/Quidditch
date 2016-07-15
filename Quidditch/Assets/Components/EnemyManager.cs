@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class EnemyManager : MonoBehaviour {
 
     public Text scoreText;
-    public GameObject sceneRings;
     private List<Enemy> enemies;
     private float checkEnemyInterval = 0.5f;
     private int originalEnemyCount;
     private int enemyCount;
+    private GameObject[] endEffects;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         var enemyObjs = GameObject.FindGameObjectsWithTag("Enemy");
         enemies = new List<Enemy>();
         foreach(var obj in enemyObjs) {
@@ -25,10 +25,14 @@ public class EnemyManager : MonoBehaviour {
         enemyCount = getAliveEnemyCount();
         originalEnemyCount = enemyCount;
         StartCoroutine("checkEnemyCount");
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        endEffects = GameObject.FindGameObjectsWithTag("EndEffect");
+        foreach (var effect in endEffects) {
+            effect.SetActive(false);
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
 
 	}
 
@@ -39,7 +43,9 @@ public class EnemyManager : MonoBehaviour {
                 scoreText.text = (originalEnemyCount - enemyCount) + "/" + originalEnemyCount;
             }
             if (enemyCount == 0) {
-                sceneRings.SetActive(true);
+                foreach (var effect in endEffects) {
+                    effect.SetActive(true);
+                }
             }
             yield return new WaitForSeconds(checkEnemyInterval);
         }

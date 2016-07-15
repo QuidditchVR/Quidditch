@@ -9,7 +9,6 @@ public class ExitScene : MonoBehaviour {
     void OnTriggerEnter(Collider c) {
         if (c.CompareTag("Player")) {
             SceneManager.LoadScene(menuSceneName);
-            NextScene.currentLevel = 1;
         }
     }
 }
