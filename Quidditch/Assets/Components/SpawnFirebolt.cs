@@ -11,6 +11,8 @@ public class SpawnFirebolt : MonoBehaviour
     public float fireboltScaleupSpeed = 1.0f;
     public float fireboltSpeed = 200.0f;
     public float fireboltDestroyTime = 5.0f;
+    public AudioSource audio;
+    public AudioClip clip;
 
 
     private SteamVR_TrackedObject trackedObj;
@@ -40,6 +42,8 @@ public class SpawnFirebolt : MonoBehaviour
         //if (firebolt != null && Input.GetKeyUp(KeyCode.Space)) {
         if (firebolt != null && device != null && device.GetPressUp(spawnButtton)) {
             Shoot();
+            audio.PlayOneShot(clip);
+
         }
     }
 
