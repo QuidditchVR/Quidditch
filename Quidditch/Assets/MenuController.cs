@@ -20,6 +20,12 @@ public class MenuController : MonoBehaviour {
         SceneManager.LoadScene("Level 1");
 
     }
+    public void PlayTutorial3()
+    {
+        //play yuyorial
+        SceneManager.LoadScene("Level 2");
+
+    }
     public void PlayTutorial2()
     {
         //play yuyorial

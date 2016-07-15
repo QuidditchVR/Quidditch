@@ -93,6 +93,7 @@
      <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GameManagerL2.cs" />
+     <Compile Include="Assets\Goal.cs" />
      <Compile Include="Assets\MenuController.cs" />
      <Compile Include="Assets\Quantum Theory\Polyworld\Scripts\QT_InteractContainer.cs" />
      <Compile Include="Assets\Quantum Theory\Polyworld\Scripts\QT_LightFlicker.cs" />
