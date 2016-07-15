@@ -12,6 +12,7 @@ public class SpawnFirebolt : MonoBehaviour
     public float fireboltSpeed = 200.0f;
     public float fireboltDestroyTime = 5.0f;
 
+
     private SteamVR_TrackedObject trackedObj;
     private SteamVR_Controller.Device device;
     private ulong spawnButtton = SteamVR_Controller.ButtonMask.Touchpad;
