@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public int cHoop = 0;
     public static GameManager instance;
     public Text text;
+    public GameObject SceneRings;
 
     // Use this for initialization
     void Start()
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
             GetComponent<ParticleSystem>().Play();
             Debug.Log("Done");
             hoops[cHoop].SetActive(false);
+            SceneRings.SetActive(true);
         }
         else
         {

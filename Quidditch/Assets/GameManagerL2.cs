@@ -7,50 +7,25 @@ public class GameManagerL2 : MonoBehaviour
 
     public Vector3[] shotSpots;
     public int sSpot = 0;
+    public int target = 5;
     public static GameManagerL2 instance;
     public Text text;
-    public GameObject player;
-    public GameObject ball;
-    public GameObject controller;
+    public GameObject SceneRings;
 
     // Use this for initialization
     void Start()
     {
         instance = this;
-
+        text.text = sSpot + "/" + target;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void goal()
     {
-
-
-    }
-
-    public void nextHoop()
-    {
-        //shotSpots[sSpot].SetActive(false);
         ++sSpot;
-        if (sSpot == 5)
+        if (sSpot >= target)
         {
-            //fireworks
-            GetComponent<ParticleSystem>().Play();
-            Debug.Log("Done");
-            //shotSpots[sSpot].SetActive(false);
+            SceneRings.SetActive(true);
         }
-        else
-        {
-            player.transform.position = shotSpots[sSpot];
-            //
-            //spawn ball
-            //Instantiate(ball, controller.transform.position, Quaternion.identity);
-            ball.transform.SetParent(controller.transform);
-            ball.GetComponent<Rigidbody>().isKinematic = true;
-            ball.transform.position = controller.transform.position;
-            //ball.tag = "Ball";
-            //controller.GetComponent<ThrowBall>().ball = ball;
-
-        }
-        text.text = sSpot + "/5";
+        text.text = sSpot + "/" + target;
     }
 }

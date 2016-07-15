@@ -36,7 +36,7 @@ public class EnemyManager : MonoBehaviour {
         while(true) {
             enemyCount = getAliveEnemyCount();
             if (scoreText) {
-                scoreText.text = enemyCount + "/" + originalEnemyCount;
+                scoreText.text = (originalEnemyCount - enemyCount) + "/" + originalEnemyCount;
             }
             if (enemyCount == 0) {
                 sceneRings.SetActive(true);
