@@ -37,15 +37,15 @@ public class FlyController : MonoBehaviour
         }
 
         Vector3 upVelocity = Vector3.zero;
-        if (Mathf.Abs(transform.forward.y) > 0.1) {
-            upVelocity = Vector3.up * (transform.forward.y * (maxUpSpeed - minUpSpeed) + minUpSpeed);
-        }
+        //if (Mathf.Abs(transform.forward.y) > 0.1) {
+        //    upVelocity = Vector3.up * (transform.forward.y * (maxUpSpeed - minUpSpeed) + minUpSpeed);
+        //}
 
         Vector3 forwardVelocity = Vector3.zero;
 		ushort pulsePower = 0;
         if (device != null && device.GetPress(fowardButtton)) {
             forwardVelocity = transform.forward;
-            forwardVelocity.y = 0;
+            //forwardVelocity.y = 0;
             forwardVelocity.Normalize();
             forwardVelocity *= forwardSpeed;
 			pulsePower = 200;
