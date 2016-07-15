@@ -6,7 +6,7 @@ public class ThrowBall : MonoBehaviour
 
     private SteamVR_TrackedObject trackedObject;
     private SteamVR_Controller.Device device;
-    private float throwSpeed = 6.5f;
+    private float throwSpeed = 10f;
     public GameObject cam;
     public GameObject ballPrefab;
     private GameObject ball;

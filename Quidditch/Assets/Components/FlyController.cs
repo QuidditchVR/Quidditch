@@ -64,6 +64,7 @@ public class FlyController : MonoBehaviour
         }
 		if (device != null && device.GetPress (boostButton) && device.GetPress (fowardButtton)) {
 			forwardVelocity *= boostMultiply;
+            windEffect.Play();
             /*if (windAudio.clip != normalWind)
             {
                 windAudio.Stop();
