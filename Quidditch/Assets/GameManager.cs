@@ -32,13 +32,14 @@ public class GameManager : MonoBehaviour
         ++cHoop;
         if (cHoop == 10)
         {
-            //fireworks
-            GetComponent<ParticleSystem>().Play();
-            Debug.Log("Done");
-            hoops[cHoop].SetActive(false);
             foreach (var effect in endEffects) {
                 effect.SetActive(true);
             }
+
+            //fireworks
+            GetComponent<ParticleSystem>().Play();
+            Debug.Log("Done");
+            //hoops[cHoop].SetActive(false);
         } else
         {
             hoops[cHoop].SetActive(true);
