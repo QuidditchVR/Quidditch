@@ -55,6 +55,7 @@
      <Compile Include="Assets\DayAndNight.cs" />
      <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\GameManager.cs" />
+     <Compile Include="Assets\GameManagerL2.cs" />
      <Compile Include="Assets\Quantum Theory\Polyworld\Scripts\QT_InteractContainer.cs" />
      <Compile Include="Assets\Quantum Theory\Polyworld\Scripts\QT_LightFlicker.cs" />
      <Compile Include="Assets\Quantum Theory\Polyworld\Scripts\QT_ModifyColor.cs" />

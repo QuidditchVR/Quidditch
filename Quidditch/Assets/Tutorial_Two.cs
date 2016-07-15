@@ -4,7 +4,7 @@ using System.Collections;
 public class Tutorial_Two : MonoBehaviour {
 
     public Vector3[] points;
-    public int Spotnum = 0;
+    public int spotNum = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -13,6 +13,7 @@ public class Tutorial_Two : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
+
 }
