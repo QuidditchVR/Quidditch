@@ -89,6 +89,7 @@
      <Compile Include="Assets\CurvedUI\Scripts\CurvedUIViveInputModule.cs" />
      <Compile Include="Assets\CurvedUI\Scripts\Experimental\CurvedUITMP.cs" />
      <Compile Include="Assets\DayAndNight.cs" />
+     <Compile Include="Assets\ExitScene.cs" />
      <Compile Include="Assets\Game.cs" />
      <Compile Include="Assets\GameManager.cs" />
      <Compile Include="Assets\GameManagerL2.cs" />
