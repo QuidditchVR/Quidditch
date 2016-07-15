@@ -22,18 +22,18 @@ public class Icebolt : MonoBehaviour
         if (col.CompareTag("Enemy")) {
             return;
         }
-        Destroy(gameObject);
         var explostion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(explostion, 8.0f);
+        Destroy(gameObject);
     }
 
     void OnCollisionEnter(Collision c) {
         if (c.collider.CompareTag("Enemy")) {
             return;
         }
-        Destroy(gameObject);
         var explostion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
         Destroy(explostion, 10.0f);
+        Destroy(gameObject);
     }
 
     public void setDestroyTime(float time) {
