@@ -5,10 +5,11 @@ public class BallController : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Goal")
-        {
+        if (col.tag == "Goal") {
             var a = GameManagerL2.instance;
-            a.goal();
+            if (a) {
+                a.goal();
+            }
         }
     }
 }
