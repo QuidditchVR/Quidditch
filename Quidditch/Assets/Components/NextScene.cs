@@ -22,7 +22,7 @@ public class NextScene : MonoBehaviour {
             }
 
             currentLevel++;
-            if (currentLevel > sceneNames.Length) {
+            if (currentLevel >= sceneNames.Length) {
                 currentLevel = 0;
             }
             SceneManager.LoadScene(sceneNames[currentLevel]);

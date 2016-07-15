@@ -31,7 +31,8 @@ public class Firebolt : MonoBehaviour {
             return;
         }
         Destroy(gameObject);
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        var explostion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Destroy(explostion, 10.0f);
     }
 
     public void setDestroyTime(float time) {

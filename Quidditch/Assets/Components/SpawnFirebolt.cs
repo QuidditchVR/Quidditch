@@ -20,11 +20,11 @@ public class SpawnFirebolt : MonoBehaviour
     // Use this for initialization
     void Start() {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
-        device = SteamVR_Controller.Input((int)this.trackedObj.index);
     }
 
     // Update is called once per frame
     void Update() {
+        device = SteamVR_Controller.Input((int)this.trackedObj.index);
 
         //if (firebolt == null && Input.GetKeyDown(KeyCode.Space)) {
         if (firebolt == null && device != null && device.GetPressDown(spawnButtton)) {
@@ -63,7 +63,7 @@ public class SpawnFirebolt : MonoBehaviour
         firebolt.GetComponent<Rigidbody>().isKinematic = false;
         firebolt.GetComponent<Rigidbody>().velocity = player.GetComponent<Rigidbody>().velocity;
         firebolt.GetComponent<Rigidbody>().AddForce(transform.forward * fireboltSpeed * scale.x);
-        firebolt = null;
         firebolt.GetComponent<Firebolt>().setDestroyTime(fireboltDestroyTime);
+        firebolt = null;
     }
 }
