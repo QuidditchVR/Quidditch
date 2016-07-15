@@ -10,13 +10,17 @@ public class GameManagerL2 : MonoBehaviour
     public int target = 5;
     public static GameManagerL2 instance;
     public Text text;
-    public GameObject SceneRings;
+    private GameObject[] endEffects;
 
     // Use this for initialization
     void Start()
     {
         instance = this;
         text.text = sSpot + "/" + target;
+        endEffects = GameObject.FindGameObjectsWithTag("EndEffect");
+        foreach (var effect in endEffects) {
+            effect.SetActive(false);
+        }
     }
 
     public void goal()
@@ -24,7 +28,9 @@ public class GameManagerL2 : MonoBehaviour
         ++sSpot;
         if (sSpot >= target)
         {
-            SceneRings.SetActive(true);
+            foreach (var effect in endEffects) {
+                effect.SetActive(true);
+            }
         }
         text.text = sSpot + "/" + target;
     }
