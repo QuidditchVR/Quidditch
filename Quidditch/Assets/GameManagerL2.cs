@@ -10,6 +10,8 @@ public class GameManagerL2 : MonoBehaviour
     public static GameManagerL2 instance;
     public Text text;
     public GameObject player;
+    public GameObject ball;
+    public GameObject controller;
 
     // Use this for initialization
     void Start()
@@ -38,8 +40,17 @@ public class GameManagerL2 : MonoBehaviour
         }
         else
         {
-            //shotSpots[sSpot].SetActive(true);
+            player.transform.position = shotSpots[sSpot];
+            //
+            //spawn ball
+            //Instantiate(ball, controller.transform.position, Quaternion.identity);
+            ball.transform.SetParent(controller.transform);
+            ball.GetComponent<Rigidbody>().isKinematic = true;
+            ball.transform.position = controller.transform.position;
+            //ball.tag = "Ball";
+            //controller.GetComponent<ThrowBall>().ball = ball;
+
         }
-        text.text = sSpot + "/12";
+        text.text = sSpot + "/5";
     }
 }

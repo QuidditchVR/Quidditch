@@ -15,10 +15,12 @@ public class BallController : MonoBehaviour {
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.tag == "Goal")
+        if(col.tag == "Ball")
         {
+            var a = GameManagerL2.instance;
+            a.nextHoop();
             Debug.Log("You scored!");
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
