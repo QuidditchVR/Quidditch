@@ -42,19 +42,25 @@ public class FlyController : MonoBehaviour
         }
 
         Vector3 forwardVelocity = Vector3.zero;
+		ushort pulsePower = 0;
         if (device != null && device.GetPress(fowardButtton)) {
             forwardVelocity = transform.forward;
             forwardVelocity.y = 0;
             forwardVelocity.Normalize();
             forwardVelocity *= forwardSpeed;
+			pulsePower = 200;
         }
-        if (device != null && device.GetPress(boostButton)) {
-            forwardVelocity *= boostMultiply;
-            windEffect.Play();
-        }
-        if (forwardVelocity == Vector3.zero) {
-            windEffect.Stop();
-        }
+		if (device != null && device.GetPress (boostButton) && device.GetPress (fowardButtton)) {
+			forwardVelocity *= boostMultiply;
+			windEffect.Play ();
+			pulsePower = 700;
+		} else {
+			windEffect.Stop();
+		}
+
+		if (pulsePower > 0) {
+			device.TriggerHapticPulse (pulsePower);
+		}
 
         camRigid.velocity = forwardVelocity + upVelocity;
         if (camRigid.velocity != Vector3.zero) {
