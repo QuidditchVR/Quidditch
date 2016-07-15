@@ -6,9 +6,11 @@ public class Firebolt : MonoBehaviour {
 
     private ParticleSystem particle;
     public GameObject explosionPrefab;
+    public AudioSource audio;
+    public AudioClip clip;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         particle = GetComponent<ParticleSystem>();	
 	}
 	
@@ -23,6 +25,8 @@ public class Firebolt : MonoBehaviour {
         }
         Destroy(gameObject);
         var explostion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        //audio
+        audio.PlayOneShot(clip);
         Destroy(explostion, 10.0f);
     }
 
@@ -32,6 +36,8 @@ public class Firebolt : MonoBehaviour {
         }
         Destroy(gameObject);
         var explostion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        //audio
+        audio.PlayOneShot(clip);
         Destroy(explostion, 10.0f);
     }
 
