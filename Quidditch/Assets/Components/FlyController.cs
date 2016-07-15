@@ -12,6 +12,10 @@ public class FlyController : MonoBehaviour
     public float forwardSpeed = 20.0f;
     public float boostMultiply = 2.0f;
     public ParticleSystem windEffect;
+    public AudioSource windAudio;
+    public AudioClip normalWind;
+    public AudioClip crazyWind;
+
     public Transform head;
 
     public bool hasStarted {
@@ -29,6 +33,7 @@ public class FlyController : MonoBehaviour
 
     void Update() {
         device = SteamVR_Controller.Input((int)trackedObj.index);
+        windAudio.Play();
         if (_hasStarted == false && device != null && device.GetPress(fowardButtton)) {
             _hasStarted = true;
         }
@@ -48,12 +53,14 @@ public class FlyController : MonoBehaviour
             //forwardVelocity.y = 0;
             forwardVelocity.Normalize();
             forwardVelocity *= forwardSpeed;
-			pulsePower = 200;
+
+            pulsePower = 200;
         }
 		if (device != null && device.GetPress (boostButton) && device.GetPress (fowardButtton)) {
 			forwardVelocity *= boostMultiply;
 			windEffect.Play ();
-			pulsePower = 700;
+            //windAudio.PlayOneShot(crazyWind);
+            pulsePower = 700;
 		} else {
 			windEffect.Stop();
 		}
