@@ -22,7 +22,6 @@ public class ThrowBall : MonoBehaviour
     void Update()
     {
         device = SteamVR_Controller.Input((int)trackedObject.index);
-
         if (ball == null && device.GetPressDown(SteamVR_Controller.ButtonMask.Trigger)) {
             ball = Instantiate(ballPrefab);
             ball.transform.parent = transform;
